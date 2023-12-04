@@ -6,7 +6,7 @@
   configMigration: true,
   dependencyDashboard: false,
   ignorePaths: [
-    "**/tests/**",
+    '**/tests/**',
   ],
   customManagers: [
     {
@@ -18,7 +18,7 @@
         '\bMSRV:1\b.*?(?<currentValue>\\d+\\.\\d+(\\.\\d+)?)',
         '(?<currentValue>\\d+\\.\\d+(\\.\\d+)?).*?\bMSRV:1\b',
       ],
-      depNameTemplate: 'MSRV:1',  // Support 1 version of rustc
+      depNameTemplate: 'MSRV:1',
       packageNameTemplate: 'rust-lang/rust',
       datasourceTemplate: 'github-releases',
     },
@@ -31,7 +31,7 @@
         '\bMSRV:3\b.*?(?<currentValue>\\d+\\.\\d+(\\.\\d+)?)',
         '(?<currentValue>\\d+\\.\\d+(\\.\\d+)?).*?\bMSRV:3\b',
       ],
-      depNameTemplate: 'MSRV:3',  // Support 3 versions of rustc
+      depNameTemplate: 'MSRV:3',
       packageNameTemplate: 'rust-lang/rust',
       datasourceTemplate: 'github-releases',
     },
@@ -40,7 +40,7 @@
     {
       commitMessageTopic: 'MSRV (1 version)',
       matchManagers: [
-        'regex',
+        'custom.regex',
       ],
       matchPackageNames: [
         'MSRV:1',
@@ -53,22 +53,19 @@
     {
       commitMessageTopic: 'MSRV (3 versions)',
       matchManagers: [
-        'regex',
+        'custom.regex',
       ],
       matchPackageNames: [
         'MSRV:3',
       ],
-      "extractVersion": "^(?<version>\\d+\\.\\d+)",  // Drop the patch version
+      extractVersion: '^(?<version>\\d+\\.\\d+)',
       schedule: [
         '* * * * *',
       ],
-      minimumReleaseAge: '85 days',  // 2 releases back * 6 weeks per release * 7 days per week + 1
+      minimumReleaseAge: '85 days',
       internalChecksFilter: 'strict',
       groupName: 'msrv',
     },
-    // Goals:
-    // - Rollup safe upgrades to reduce CI runner load
-    // - Have lockfile and manifest in-sync (implicit rules)
     {
       matchManagers: [
         'cargo',
