@@ -253,7 +253,7 @@ dependencies = [
  "git2",
  "git2-curl",
  "gix",
- "gix-features",
+ "gix-features 0.41.1",
  "glob",
  "hex",
  "hmac",
@@ -1039,7 +1039,7 @@ dependencies = [
  "gix-date",
  "gix-diff",
  "gix-discover",
- "gix-features",
+ "gix-features 0.35.0",
  "gix-filter",
  "gix-fs",
  "gix-glob",
@@ -1145,7 +1145,7 @@ checksum = "e75a975ee22cf0a002bfe9b5d5cb3d2a88e263a8a178cd7509133cff10f4df8a"
 dependencies = [
  "bstr",
  "gix-chunk",
- "gix-features",
+ "gix-features 0.35.0",
  "gix-hash",
  "memmap2",
  "thiserror",
@@ -1159,7 +1159,7 @@ checksum = "c171514b40487d3f677ae37efc0f45ac980e3169f23c27eb30a70b47fdf88ab5"
 dependencies = [
  "bstr",
  "gix-config-value",
- "gix-features",
+ "gix-features 0.35.0",
  "gix-glob",
  "gix-path",
  "gix-ref",
@@ -1247,17 +1247,27 @@ checksum = "9b9ff423ae4983f762659040d13dd7a5defbd54b6a04ac3cc7347741cec828cd"
 dependencies = [
  "bytes",
  "crc32fast",
- "crossbeam-channel",
  "flate2",
  "gix-hash",
  "gix-trace",
  "libc",
  "once_cell",
- "parking_lot",
  "prodash",
  "sha1_smol",
  "thiserror",
  "walkdir",
+]
+
+[[package]]
+name = "gix-features"
+version = "0.41.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "016d6050219458d14520fe22bdfdeb9cb71631dec9bc2724767c983f60109634"
+dependencies = [
+ "crossbeam-channel",
+ "gix-trace",
+ "libc",
+ "parking_lot",
 ]
 
 [[package]]
@@ -1286,7 +1296,7 @@ version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "09815faba62fe9b32d918b75a554686c98e43f7d48c43a80df58eb718e5c6635"
 dependencies = [
- "gix-features",
+ "gix-features 0.35.0",
 ]
 
 [[package]]
@@ -1297,7 +1307,7 @@ checksum = "a9d76e85f11251dcf751d2c5e918a14f562db5be6f727fd24775245653e9b19d"
 dependencies = [
  "bitflags 2.4.0",
  "bstr",
- "gix-features",
+ "gix-features 0.35.0",
  "gix-path",
 ]
 
@@ -1345,7 +1355,7 @@ dependencies = [
  "btoi",
  "filetime",
  "gix-bitmap",
- "gix-features",
+ "gix-features 0.35.0",
  "gix-fs",
  "gix-hash",
  "gix-lock",
@@ -1405,7 +1415,7 @@ dependencies = [
  "btoi",
  "gix-actor",
  "gix-date",
- "gix-features",
+ "gix-features 0.35.0",
  "gix-hash",
  "gix-validate",
  "itoa 1.0.6",
@@ -1422,7 +1432,7 @@ checksum = "8d6a392c6ba3a2f133cdc63120e9bc7aec81eef763db372c817de31febfe64bf"
 dependencies = [
  "arc-swap",
  "gix-date",
- "gix-features",
+ "gix-features 0.35.0",
  "gix-hash",
  "gix-object",
  "gix-pack",
@@ -1441,7 +1451,7 @@ checksum = "7536203a45b31e1bc5694bbf90ba8da1b736c77040dd6a520db369f371eb1ab3"
 dependencies = [
  "clru",
  "gix-chunk",
- "gix-features",
+ "gix-features 0.35.0",
  "gix-hash",
  "gix-hashtable",
  "gix-object",
@@ -1526,7 +1536,7 @@ dependencies = [
  "btoi",
  "gix-credentials",
  "gix-date",
- "gix-features",
+ "gix-features 0.35.0",
  "gix-hash",
  "gix-transport",
  "maybe-async",
@@ -1553,7 +1563,7 @@ checksum = "22e6b749660b613641769edc1954132eb8071a13c32224891686091bef078de4"
 dependencies = [
  "gix-actor",
  "gix-date",
- "gix-features",
+ "gix-features 0.35.0",
  "gix-fs",
  "gix-hash",
  "gix-lock",
@@ -1653,9 +1663,9 @@ dependencies = [
 
 [[package]]
 name = "gix-trace"
-version = "0.1.3"
+version = "0.1.21"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "96b6d623a1152c3facb79067d6e2ecdae48130030cf27d6eb21109f13bd7b836"
+checksum = "be3eb81d9dc914335923e50d52829c551feefd6a72d176c4130c546b67a60814"
 
 [[package]]
 name = "gix-transport"
@@ -1668,7 +1678,7 @@ dependencies = [
  "curl",
  "gix-command",
  "gix-credentials",
- "gix-features",
+ "gix-features 0.35.0",
  "gix-packetline",
  "gix-quote",
  "gix-sec",
@@ -1699,7 +1709,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6125ecf46e8c68bf7202da6cad239831daebf0247ffbab30210d72f3856e420f"
 dependencies = [
  "bstr",
- "gix-features",
+ "gix-features 0.35.0",
  "gix-path",
  "home 0.5.5",
  "thiserror",
@@ -1733,7 +1743,7 @@ checksum = "9f5e32972801bd82d56609e6fc84efc358fa1f11f25c5e83b7807ee2280f14fe"
 dependencies = [
  "bstr",
  "gix-attributes",
- "gix-features",
+ "gix-features 0.35.0",
  "gix-fs",
  "gix-glob",
  "gix-hash",
