@@ -102,6 +102,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9ba43ea6f343b788c8764558649e08df62f86c6ef251fdaeb1ffd010a9ae50a2"
 
 [[package]]
+name = "base64"
+version = "0.23.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ac07cdecf99051d9a5238b80f35af32cdeba5b336e55d957b318b50137e18da5"
+
+[[package]]
 name = "base64ct"
 version = "1.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -233,7 +239,7 @@ dependencies = [
  "anstream",
  "anstyle",
  "anyhow",
- "base64",
+ "base64 0.23.1",
  "bytesize",
  "cargo-credential",
  "cargo-credential-libsecret",
@@ -1663,7 +1669,7 @@ version = "0.37.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b9ec726e6a245e68ace59a34126a1d679de60360676612985e70b0d3b102fb4e"
 dependencies = [
- "base64",
+ "base64 0.21.4",
  "bstr",
  "curl",
  "gix-command",
